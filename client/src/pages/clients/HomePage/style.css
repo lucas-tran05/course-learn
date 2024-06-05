@@ -1,0 +1,6 @@
+.home-page img:hover{
+  cursor: pointer;
+  transform: scale(1.025);
+  opacity: 0.8;
+  transition: 0.3s;
+}

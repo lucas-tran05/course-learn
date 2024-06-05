@@ -1,0 +1,14 @@
+.profile-page {
+  padding-top: var(--header-height) !important;
+  height: 100dvh;
+}
+
+.profile-page .profile-page__left{
+  height: calc(100dvh - var(--header-height));
+  top: var(--header-height);
+  z-index: 100;
+}
+
+.profile-page .profile-page__right{
+  height: calc(100vh - var(--header-height));
+}

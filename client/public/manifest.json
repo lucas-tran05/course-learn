@@ -1,0 +1,6 @@
+{
+  "short_name": "Course Learn",
+  "name": "Course Learn",
+  "start_url": ".",
+  "display": "standalone"
+}

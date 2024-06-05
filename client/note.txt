@@ -1,0 +1,17 @@
+# bố cục file 
+src:        Chứa toàn bộ source code của dự án
+api:        Chứa api url
+assets:     Chứa các thành phần dùng chung như images, font, libs, ...
+components: Chứa các component dùng chung và có thể tái sử dụng
+layouts:    Chứa các bố cục như header, main, footer, ...
+pages:      Chứa các trang (màn hình của dự án)
+redux:      Cấu hình redux (nếu có)
+resources:  Chứa các đoạn text trên ứng dụng, có thể dùng để để chuyển đổi ngôn ngữ
+routes:     Chứa các định tuyến của các trang
+services:   Nơi lấy dữ liệu khi gọi API
+utils:      Chứa các hàm dùng cho cho toàn bộ ứng dụng (formatDate(), validateEmail()), ...
+App.jsx:    Chứa các router, điều hướng router, hiển thị các trang
+index.css:  Chứa các css dùng chung cho toàn bộ dự án
+
+# reactJS
+* useState() : tự động Render lại giao diện người dùng

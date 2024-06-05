@@ -1,0 +1,12 @@
+src:          Thư mục chứa toàn bộ source code của toàn bộ dự án
+config:       Chứa chuỗi kết nối đến database
+controllers:  Nơi đón nhận tất cả các request gửi từ client lên server và trả về response từ server về cho client
+enum:         Chứa các giá trị là hằng số như: giới tính, trạng thái
+models:       
+middlewares:  Chứa các middleware của toàn bộ ứng dụng
+resources:    Chứa các đoạn text fix cứng trên ứng dụng
+routes:       Chứa các định tuyến của API
+service:      Nơi gọi dữ liệu từ trong Database
+utils:        Chứa các hàm dùng chung co the tai sử dung lại nhieu lan
+index.js:     Nơi khởi tạo và cấu hình quan trọng cho ứng dụng
+.env:         File chứa các biến môi trường hoặc các thông tin bí mật như: mat khẩu, api key, host ....

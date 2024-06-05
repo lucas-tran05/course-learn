@@ -1,0 +1,23 @@
+.header-style{
+  height: var(--header-height);
+  background-color: var(--color-light-primary);
+  z-index: 1000;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-menu li{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.header-style img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.header-style .middle a:hover{
+  opacity: 0.8;
+} 
