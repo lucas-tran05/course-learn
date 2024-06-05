@@ -89,7 +89,19 @@ p{
   color: var(--color-text-light);
   font-size: var(--size-text-medium);
   transform: scale(1.025);
+}
 
+.btn-style-close {
+  border: 1px solid #910a0a;
+  background-color: #C40C0C;
+  color: white;
+  font-size: var(--size-text-medium);
+  padding: 5px 5px;
+  border-radius: 20%;
+}
+
+.btn-style-close:hover{
+  opacity: 0.8;
 }
 
 /* animation */

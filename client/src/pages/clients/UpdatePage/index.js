@@ -11,39 +11,45 @@ const UpdatePage = memo(() => {
       <div className="register-page position-relative">
         <form className="col-5 d-flex gap-3 flex-column align-items-center justify-content-center p-5 shadow-lg rounded-end overflow-auto position-absolute">
           <h2>Cập nhật thông tin</h2>
-          <div className="form__create-client gap-3 d-flex flex-column w-100 p-5 pt-0 pb-0">
+          <div className="gap-3 d-flex flex-column w-100 p-5 pt-0 pb-0">
             <div>
-              <label htmlFor="create-client-name" className='form-label'>Họ và tên</label>
-              <input type="text" id="create-client-name" className='form-control' placeholder={user?.name ? user?.name : "Họ và tên"} />
-            </div>
-            <div className="create-client">
-              <label htmlFor="create-client-id" className='form-label'>Mã học viên</label>
-              <input type="text" id="create-client-id" className='form-control' placeholder={user?.stuID ? user?.stuID : "Mã học viên"} />
+              <label htmlFor="up-name" className='form-label'>Họ và tên</label>
+              <input type="text" id="up-name" className='form-control' placeholder={user?.name ? user?.name : "Họ và tên"} />
             </div>
             <div className="row g-0 gap-3 d-flex align-items-center justify-content-between w-100">
-              <div className="col-5 ">
-                  <label htmlFor="birth" className='col col-form-label'>Ngày sinh</label>
-                  <input type="date" id="birth" className='col form-control' placeholder={user?.birth ? user?.birth : ""} />
+            <div className="col">
+              <label htmlFor="up-stuID" className='form-label'>Mã học viên</label>
+              <input type="text" id="up-stuID" className='form-control' placeholder={user?.stuID ? user?.stuID : "Mã học viên"} />
+            </div>
+            <div className="col">
+              <label htmlFor="up-major" className='form-label'>Chuyên ngành</label>
+              <input type="text" id="up-major" className='form-control' placeholder={user?.major ? user?.major : "Chuyên ngành"} />
+            </div>
+            </div>
+            <div className="row g-0 gap-3 d-flex align-items-center justify-content-between w-100">
+              <div className="col ">
+                  <label htmlFor="up-birth" className='col col-form-label'>Ngày sinh</label>
+                  <input type="date" id="up-birth" className='col form-control' placeholder={user?.birth ? user?.birth : ""} />
               </div>
-              <div className="col-5">
-                  <label htmlFor="gender" className='col col-form-label' placeholder={user?.gender ? user?.gender : ""}>Giới tính</label>
-                  <select id="gender" className='col form-control'>
+              <div className="col">
+                  <label htmlFor="up-gender" className='col col-form-label' placeholder={user?.gender ? user?.gender : ""}>Giới tính</label>
+                  <select id="up-gender" className='col form-control'>
                     <option value="male">Nam</option>
                     <option value="female">Nữ</option>
                   </select>
               </div>
             </div>
             <div>
-              <label htmlFor="create-email" className='form-label'>Email</label>
-              <input type="email" id="create-email" className='form-control' placeholder={user?.email ? user?.email : "Email"} />
+              <label htmlFor="up-email" className='form-label'>Email</label>
+              <input type="email" id="up-email" className='form-control' placeholder={user?.email ? user?.email : "Email"} />
             </div>
             <div>
-              <label htmlFor="phone" className='form-label'>Số điện thoại</label>
-              <input type="text" id="phone" className='form-control' placeholder={user?.phone ? user?.phone : "Số điện thoại"} />
+              <label htmlFor="up-phone" className='form-label'>Số điện thoại</label>
+              <input type="text" id="up-phone" className='form-control' placeholder={user?.phone ? user?.phone : "Số điện thoại"} />
             </div>
             <div>
-              <label htmlFor="address" className='form-label'>Địa chỉ</label>
-              <input type="text" id="address" className='form-control' placeholder={user?.address ? user?.address : "Địa chỉ"} />
+              <label htmlFor="up-address" className='form-label'>Địa chỉ</label>
+              <input type="text" id="up-address" className='form-control' placeholder={user?.address ? user?.address : "Địa chỉ"} />
             </div>
           </div>
           <div className="d-flex gap-4 mt-3" >

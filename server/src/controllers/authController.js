@@ -33,7 +33,12 @@ const authController = {
         stuID: req.body.stuID,
         username: req.body.username,
         email: req.body.email,
-        password: hashed
+        password: hashed,
+        phone: req.body.phone,
+        address: req.body.address,
+        gender: req.body.gender,
+        birthday: req.body.birthday,
+        major: req.body.major
       });
       const user = await newUser.save();
       return res.status(200).json(user);

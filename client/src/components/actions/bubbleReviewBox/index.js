@@ -1,32 +1,28 @@
-import React from 'react';
-import { memo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { clientIMG } from "../../../components/imageRender";
-import './style.css';
-import Header from '../../../layouts/header/index';
-import { useSelector } from 'react-redux';
-import { logOutUser } from '../../../api/apiRequest';
-import { useDispatch } from 'react-redux';
-// import { loginSuccess } from '../../../redux/authSlice';
-// import {axiosInstance} from '../../../createIntance';
-const ProfilePage = () => {
+import { memo } from "react";
+import { useSelector } from "react-redux";
+import { clientIMG} from "../../../components/imageRender";
+
+
+const BubbleReviewBox = memo(() => {
   const user = useSelector((state) => state.auth.login.currentUser);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const accessToken = user?.accessToken;
-  const id = user?._id;
-  // let axiosJWT = axiosInstance(user,dispatch,loginSuccess);
-  const handelLogOut = () => {
-    logOutUser(dispatch, id, navigate, accessToken);
-  }
   return (
-    <div>
-      <Header />
-      <div className="profile-page row g-0 container-fluid position-relative w-100">
-        <div className='profile-page__left col-4 overflow-auto text-center fixed-left left-0 p-5 shadow rounded-end p-0 m-0'>
+    <div
+      id="reviewBox"
+      className='row g-0 h-100 w-100 justify-content-center align-content-center position-absolute'
+      style={{ zIndex: '1000', backgroundColor: 'rgba(0, 0, 0, 0.5)', display: 'none' }}
+    >
+      <button
+        className="btn-style-close rounded-4 position-absolute top-0 end-0 d-flex justify-content-center align-items-center mt-3 me-3 p-3"
+        onClick={() => document.getElementById('reviewBox').style.display = 'none'}
+        style={{ zIndex: '1000', width: '50px', height: '50px' }}
+      >
+        <span className="material-symbols-outlined">
+          close
+        </span>
+      </button>
+      <div className='rounded-4 profile-page__left col-4 overflow-auto text-center p-5 shadow p-0 m-0 w-content' style={{ zIndex: '1000' , backgroundColor: 'white'}}>
           <img src={user?.avatar ? user?.avatar : clientIMG} alt="avatar" className='rounded-circle shadow' draggable="false" style={{ width: "120px" }} />
           <h2 className='mt-4 mb-4'> {user?.name?user?.name:"NULL"} </h2>
-          <Link to="/client/update"><button className='btn btn-style-1 mb-4'> Cập nhật thông tin </button></Link>
           <ul className='d-flex flex-column gap-3 mt-3 flex-wrap p-0'>
             <ul className='d-flex gap-2'>
               <span className="material-symbols-outlined">
@@ -79,23 +75,8 @@ const ProfilePage = () => {
             </ul>
           </ul>
         </div>
-        <div className='profile-page__right  col justify-content-between d-flex p-4 d-flex flex-column align-items-center'>
-          <div>
-            <ul className='d-flex gap-3 mt-3 flex-wrap'>
-              <li>NULL</li>
-              <li>NULL</li> 
-              <li>NULL</li>
-            </ul>
-          </div>
-          <button 
-            className='btn btn-style-1' 
-            style={{ minWidth: "200px" }}
-            onClick={handelLogOut}
-            > Đăng xuất </button>
-        </div>
-      </div>
     </div>
   );
-}
+});
 
-export default memo(ProfilePage);
+export default BubbleReviewBox;

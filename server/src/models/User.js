@@ -49,6 +49,10 @@ const UserSchema = new mongodb.Schema({
     type: String,
     required: false
   },
+  major:{
+    type: String,
+    required: false
+  }
 }, {timestamps: true});
 
 module.exports = mongodb.model('User', UserSchema)
