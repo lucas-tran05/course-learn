@@ -8,4 +8,7 @@ router.get('/get', middlewareController.verifyTokenAndAdminAuth, userController.
 // Delete user
 router.delete('/delete/:id', middlewareController.verifyTokenAndAdminAuth, userController.deleteUser);
 
+// Patch user
+router.patch('/update/:id', middlewareController.verifyTokenAndAdminAuth, userController.updateUser);
+
 module.exports = router;

@@ -111,8 +111,8 @@ const BubbleRegisterBox = memo(() => {
           <div className="col-5">
             <label htmlFor="gender" className='col col-form-label' >Giới tính</label>
             <select id="gender" className='col form-control' onChange={(e) => setGender(e.target.value)}>
-              <option value="male">Nam</option>
-              <option value="female">Nữ</option>
+              <option value={true}>Nam</option>
+              <option value={false}>Nữ</option>
             </select>
           </div>
           <div className="col-6 ">

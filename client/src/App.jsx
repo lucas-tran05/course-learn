@@ -5,17 +5,24 @@ import { useSelector } from "react-redux";
 
 function App() {
   const user = useSelector((state) => state.auth.login.currentUser);
-  if(user)
-    {
+  if (user) {
+    if (user.admin === true) {
       return (
         <BrowserRouter>
           {renderUserRouter()}
           {renderAdminRouter()}
           {renderAuthRouter()}
         </BrowserRouter>
-      );
+      )
     }
-  else{
+    return (
+      <BrowserRouter>
+        {renderUserRouter()}
+        {renderAuthRouter()}
+      </BrowserRouter>
+    );
+  }
+  else {
     return (
       <BrowserRouter>
         {renderAuthRouter()}

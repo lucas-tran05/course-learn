@@ -4,7 +4,8 @@ import {  loginStart, loginSuccess, loginFailure,
           logoutStart, logoutSuccess, logoutFailure 
         } from "../redux/authSlice";
 import {  getUsersStart, getUsersSuccess, getUsersFailure, 
-          deleteUserStart, deleteUserSuccess, deleteUserFailure 
+          deleteUserStart, deleteUserSuccess, deleteUserFailure,
+          updateUserStart, updateUserSuccess, updateUserFailure
         } from "../redux/userSlice";
 
 const loginUser = async (user, dispatch, navigate) => {
@@ -17,10 +18,11 @@ const loginUser = async (user, dispatch, navigate) => {
     }
     else {
       navigate("/client/home");
+
     }
   } catch (err) {
-    alert("Đăng nhập thất bại");
     dispatch(loginFailure());
+    alert(`Đăng nhập thất bại}`);
   }
 }
 
@@ -77,4 +79,16 @@ const logOutUser = (dispatch,id, navigate, accessToken) => {
   }
 }
 
-export { loginUser, registerUser, getAllUsers, deleteUser, logOutUser }
+const updateUser = async (id, accessToken, dispatch, user) => {
+  dispatch(updateUserStart());
+  try {
+    await axios.patch(`http://localhost:5000/api/user/update/${id}`, user, {
+      headers: { token: `Bearer ${accessToken}` }
+    });
+    dispatch(updateUserSuccess(id,user));
+  } catch (err) {
+    dispatch(updateUserFailure());
+  }
+}
+
+export { loginUser, registerUser, getAllUsers, deleteUser, logOutUser, updateUser }
