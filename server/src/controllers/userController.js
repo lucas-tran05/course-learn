@@ -44,6 +44,7 @@ const userController = {
         user.gender = req.body.gender || user.gender;
         user.birthday = req.body.birthday || user.birthday;
         user.major = req.body.major || user.major;
+        user.avatar = req.body.avatar || user.avatar;
         const updatedUser = await user.save();
         res.status(200).json(updatedUser);
     } catch (err) {

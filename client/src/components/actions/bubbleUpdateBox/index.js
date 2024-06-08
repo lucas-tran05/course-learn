@@ -1,6 +1,8 @@
 import { memo, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../../api/apiRequest.js"; // Assuming you have an updateUser API request function
+import { getAllUsers } from "../../../api/apiRequest.js";
+
 
 const BubbleUpdateBox = memo(({ userId, onClose }) => {
   const allUsers = useSelector((state) => state.user.users?.allUsers);
@@ -48,6 +50,7 @@ const BubbleUpdateBox = memo(({ userId, onClose }) => {
 
     updateUser(userId,user.accessToken, dispatch, updatedUser)
       .then(() => {
+        getAllUsers(user?.accessToken, dispatch);
         alert("User updated successfully");
         onClose();
       })

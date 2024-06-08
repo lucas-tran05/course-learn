@@ -71,8 +71,8 @@ const logOutUser = (dispatch,id, navigate, accessToken) => {
       headers: { token: `Bearer ${accessToken}` }
     });
     dispatch(logoutSuccess());
+    navigate("/login");
     localStorage.removeItem("accessToken", accessToken);
-    navigate("/client/login");
   }
   catch(err){
     dispatch(logoutFailure());

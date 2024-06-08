@@ -5,7 +5,7 @@ const courseList = () => {
         id: 1,
         courseName: 'DSA',
         cost: '100000 vnd',
-        img: ''
+        img: 'https://funix.edu.vn/wp-content/uploads/2023/05/Data-Structure-and-Algorithm-1024x768.jpeg'
       },
       {
         id: 2,
@@ -17,12 +17,24 @@ const courseList = () => {
         id: 3,
         courseName: 'C/C++',
         cost: '1000000 vnd',
-        img: ''
+        img: 'https://citl.siu.edu.vn/wp-content/uploads/2020/11/C_C_featuredimage.png'
       },
       {
         id: 4,
         courseName: 'Java',
         cost: '1000000 vnd',
+        img: 'https://tuyendung.kfcvietnam.com.vn/Data/Sites/1/media/blog/java-la-gi.jpg'
+      },
+      {
+        id: 5,
+        courseName: 'Ubuntu',
+        cost: '349000 vnd',
+        img: ''
+      },
+      {
+        id: 6,
+        courseName: 'My SQL',
+        cost: '419000 vnd',
         img: ''
       }
     ]

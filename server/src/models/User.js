@@ -1,58 +1,67 @@
 const mongodb = require('mongoose');
 
+const isValidDate = (dateString) => {
+  const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(\d{4})$/;
+  return regex.test(dateString);
+};
+
 const UserSchema = new mongodb.Schema({
-  name:{
+  name: {
     type: String,
     required: true
   },
-  stuID:{
-    type: String,
-    required: true
-  },
-  username:{
+  stuID: {
     type: String,
     required: true,
     unique: true
   },
-  email:{
+  username: {
     type: String,
     required: true,
     unique: true
   },
-  password:{
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
     type: String,
     required: true,
     minlength: 6
   },
-  admin:{
+  admin: {
     type: Boolean,
     default: false
   },
-  avatar:{
+  avatar: {
     type: String,
     required: false
   },
-  phone:{
+  phone: {
     type: String,
     required: false
   },
-  address:{
+  address: {
     type: String,
     required: false
   },
-  gender:{
+  gender: {
     type: Boolean,
     required: false,
     default: true,
   },
-  birth:{
-    type: String,
-    required: false
+  birth: {
+    type: Date,
+    required: false,
+    validate: {
+      validator: isValidDate,
+    }
   },
-  major:{
+  major: {
     type: String,
     required: false
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
-module.exports = mongodb.model('User', UserSchema)
+module.exports = mongodb.model('User', UserSchema);

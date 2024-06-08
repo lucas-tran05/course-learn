@@ -1,9 +1,9 @@
 import { memo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import {logo, registerGif} from '../../../components/imageRender'
+import {logo, registerGif} from '../../components/imageRender'
 import { useState } from 'react'
-import { registerUser } from '../../../api/apiRequest'
+import { registerUser } from '../../api/apiRequest'
 import './style.css'
 
 const RegisterPage = () => {
@@ -27,14 +27,14 @@ const RegisterPage = () => {
     }
     if(registerUser(newUser,dispatch,navigate)){
       setTimeout(() => {
-        navigate("/client/login");
+        navigate("/login");
       }, 1000);
     }
   }
   return (
     <>
       <div className="register-page position-relative">
-        <Link to="/client/login">
+        <Link to="/login">
           <button className='btn btn-style-1 position-absolute left-0 mt-5 rounded-end-4 rounded-start-0 p-2 shadow-sm' style={{ minWidth: '150px'}}> Đăng nhập</button>
         </Link>
         <img src={registerGif} alt="register" className='gif-register position-absolute right-0'></img>

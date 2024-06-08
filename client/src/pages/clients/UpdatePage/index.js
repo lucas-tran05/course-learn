@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerGif } from "../../../components/imageRender";
 import { useSelector } from "react-redux";
-import { loginUser, updateUser } from "../../../api/apiRequest";
+import { updateUser } from "../../../api/apiRequest";
 import { useDispatch } from "react-redux";
 
 import './style.css';
@@ -38,8 +38,8 @@ const UpdatePage = memo(() => {
     if (window.confirm("Bạn có muốn cập nhật?")) {
       try {
         await updateUser(id, user?.accessToken, dispatch, newUser);
-        alert("Cập nhật thành công");
         
+        alert("Cập nhật thành công");
         navigate('/client/profile')
       } catch (error) {
         console.error("Error updating user: ", error);
@@ -97,7 +97,7 @@ const UpdatePage = memo(() => {
             </div>
             <div>
               <label htmlFor="up-phone" className='form-label'>Số điện thoại</label>
-              <input type="text" id="up-phone" className='form-control' placeholder="Số điện thoại" defaultValue={user?.phone ? user?.phone : ""} onChange={(e) => setPhone(e.target.value)} />
+              <input type="text" id="up-phone" inputMode="numeric" className='form-control' placeholder="Số điện thoại" defaultValue={user?.phone ? user?.phone : ""} onChange={(e) => setPhone(e.target.value)} />
             </div>
             <div>
               <label htmlFor="up-address" className='form-label'>Địa chỉ</label>

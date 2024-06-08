@@ -7,9 +7,9 @@
   display: none !important;
 }
 
-.dropdown-menu li{
-  padding-top: 3px;
-  padding-bottom: 3px;
+.dropdown-menu li a, .dropdown-menu li > button{
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
 }
 
 .header-style img:hover{

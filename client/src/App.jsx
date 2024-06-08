@@ -1,6 +1,6 @@
 import React from "react";
 import { renderUserRouter, renderAdminRouter, renderAuthRouter } from "./routes/render.jsx";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
     );
   }
   else {
+    
     return (
       <BrowserRouter>
         {renderAuthRouter()}

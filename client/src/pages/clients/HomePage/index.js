@@ -25,7 +25,7 @@ const HomePage = memo(() => {
               listCourse.map((course) => {
                 return (
                   <div className="card col-3 p-4" style={{ width: '30%' }}>
-                    <img alt='course' className="card-img-top rounded-2" style={{ width: '100%', height: 'calc(50/100 * 30/100* 100vw)', objectFit: 'cover' }} src={course.img !== '' ?course.img: courseIMG}></img>
+                    <img alt='course' className="card-img-top rounded-2 border border-1" style={{ width: '100%', height: 'calc(50/100 * 30/100* 100vw)', objectFit: 'cover' }} src={course.img !== '' ?course.img: courseIMG}></img>
                     <div className="card-body">
                       <h5 className="card-title">{course.courseName}</h5>
                       <p className="card-text d-flex gap-2"><p style={{ fontWeight: '500' }}>Fee: </p> {course.cost}</p>

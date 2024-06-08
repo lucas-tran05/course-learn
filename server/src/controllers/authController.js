@@ -38,7 +38,9 @@ const authController = {
         address: req.body.address,
         gender: req.body.gender,
         birthday: req.body.birthday,
-        major: req.body.major
+        major: req.body.major,
+        admin: req.body.admin,
+        avatar: req.body.avatar
       });
       const user = await newUser.save();
       return res.status(200).json(user);

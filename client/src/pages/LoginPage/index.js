@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { memo } from 'react';
-import { logo, loginIMG } from '../../../components/imageRender';
+import { logo, loginIMG } from '../../components/imageRender';
 import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../../api/apiRequest';
+import { loginUser } from '../../api/apiRequest';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -26,7 +26,7 @@ const LoginPage = () => {
 
   return (
     <div className="login-page container-fluid d-flex justify-content-center align-items-center position-relative">
-      <img src={loginIMG} alt="logo" className='position-absolute bottom-0 right-0 w-100 left-0' style={{ filter: 'blur(2px)' }}></img>
+      {/* <img src={loginIMG} alt="logo" className='position-absolute bottom-0 right-0 w-100 left-0' style={{ filter: 'blur(2px)' } } draggable="false"></img> */}
       <form
         className="login-page__form col-3 d-flex gap-3 flex-column align-items-center justify-content-center shadow-lg rounded-4 p-5"
         style={{ zIndex: 100, background: 'rgba(255, 255, 255)' }}
@@ -62,7 +62,7 @@ const LoginPage = () => {
           <button type="submit" className="btn btn-style-1 w-100">Đăng nhập </button>
         </div>
         <p>Hoặc</p>
-        <Link to="/client/register" className='w-100 p-3 pt-0 pb-0'><button className="btn btn-style-2 w-100">Đăng ký </button></Link>
+        <Link to="/register" className='w-100 p-3 pt-0 pb-0'><button className="btn btn-style-2 w-100">Đăng ký </button></Link>
       </form>
     </div>
   )

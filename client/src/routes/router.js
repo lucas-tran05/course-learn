@@ -3,8 +3,8 @@ export const ROUTER = {
     HOME: '/admin/home',
   },
   CLIENT : {
-    LOGIN: '/client/login',
-    REGISTER: '/client/register',
+    LOGIN: '/login',
+    REGISTER: '/register',
     HOME: '/client/home',
     PROFILE: '/client/profile',
     EXERCISE: '/client/exercise',
