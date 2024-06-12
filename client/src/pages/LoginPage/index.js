@@ -15,12 +15,11 @@ const LoginPage = () => {
   const handelLogin = (e) => {
     e.preventDefault();
     const newUser = {
-      username,
+      username,   
       password
     };
     loginUser(newUser, dispatch, navigate);
     if (!loginUser(newUser, dispatch, navigate)) {
-      alert("Đăng nhập thất baị");
     }
   }
 

@@ -8,10 +8,12 @@ import {  getUsersStart, getUsersSuccess, getUsersFailure,
           updateUserStart, updateUserSuccess, updateUserFailure
         } from "../redux/userSlice";
 
+const host = "http://localhost:5000";
+
 const loginUser = async (user, dispatch, navigate) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post("http://localhost:5000/api/auth/client/login", user);
+    const res = await axios.post(host + "/api/auth/client/login", user);
     dispatch(loginSuccess(res.data));
     if (res.data.admin === true) {
       navigate("/admin/home");
@@ -22,14 +24,14 @@ const loginUser = async (user, dispatch, navigate) => {
     }
   } catch (err) {
     dispatch(loginFailure());
-    alert(`Đăng nhập thất bại}`);
+    alert(`Đăng nhập thất bại`);
   }
 }
 
 const registerUser = async (user, dispatch, navigate) => {
   dispatch(registerStart());
   try {
-    await axios.post("http://localhost:5000/api/auth/client/register", user);
+    await axios.post(host + "/api/auth/client/register", user);
     dispatch(registerSuccess());
     alert("Đăng ký thành công");
     return true;
@@ -42,7 +44,7 @@ const registerUser = async (user, dispatch, navigate) => {
 const getAllUsers = async (accessToken, dispatch) => {
   dispatch(getUsersStart());
   try {
-    const res = await axios.get("http://localhost:5000/api/user/get/", {
+    const res = await axios.get(host + "/api/user/get/", {
       headers: { token: `Bearer ${accessToken}` }
     });
     dispatch(getUsersSuccess(res.data));
@@ -54,7 +56,7 @@ const getAllUsers = async (accessToken, dispatch) => {
 const deleteUser = async (id, accessToken, dispatch) => {
   dispatch(deleteUserStart());
   try {
-    await axios.delete(`http://localhost:5000/api/user/delete/${id}`, {
+    await axios.delete(host + `/api/user/delete/${id}`, {
       headers: { token: `Bearer ${accessToken}` }
     });
     dispatch(deleteUserSuccess(id));
@@ -67,7 +69,7 @@ const deleteUser = async (id, accessToken, dispatch) => {
 const logOutUser = (dispatch,id, navigate, accessToken) => {
   dispatch(logoutStart());
   try{
-    axios.post("http://localhost:5000/api/auth/logout",id, {
+    axios.post(host + "/api/auth/logout",id, {
       headers: { token: `Bearer ${accessToken}` }
     });
     dispatch(logoutSuccess());
@@ -82,7 +84,7 @@ const logOutUser = (dispatch,id, navigate, accessToken) => {
 const updateUser = async (id, accessToken, dispatch, user) => {
   dispatch(updateUserStart());
   try {
-    await axios.patch(`http://localhost:5000/api/user/update/${id}`, user, {
+    await axios.patch(host + `/api/user/update/${id}`, user, {
       headers: { token: `Bearer ${accessToken}` }
     });
     dispatch(updateUserSuccess(id,user));

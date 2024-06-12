@@ -20,7 +20,7 @@ const HomePageAdmin = memo(() => {
 
   useEffect(() => {
     if (!user) {
-      navigate("/client/login");
+      navigate("/login");
     }
     if (user?.accessToken) {
       getAllUsers(user?.accessToken, dispatch);

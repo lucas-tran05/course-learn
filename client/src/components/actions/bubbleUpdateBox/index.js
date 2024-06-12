@@ -1,12 +1,11 @@
 import { memo, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUser } from "../../../api/apiRequest.js"; // Assuming you have an updateUser API request function
-import { getAllUsers } from "../../../api/apiRequest.js";
+import { updateUser, getAllUsers } from "../../../api/apiRequest"; // Ensure correct import path
 
-
-const BubbleUpdateBox = memo(({ userId, onClose }) => {
+const BubbleUpdateBox = memo(({ userId, onClose, userCurrent }) => {
   const allUsers = useSelector((state) => state.user.users?.allUsers);
   const user = allUsers?.find((u) => u._id === userId);
+  const currentUser = useSelector((state) => state.auth.login.currentUser);
 
   const [name, setName] = useState('');
   const [stuID, setStuID] = useState('');
@@ -34,8 +33,9 @@ const BubbleUpdateBox = memo(({ userId, onClose }) => {
     }
   }, [user]);
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
+
     const updatedUser = {
       name,
       stuID,
@@ -45,16 +45,18 @@ const BubbleUpdateBox = memo(({ userId, onClose }) => {
       phone,
       address,
       gender,
-      birth
+      birth,
     };
 
-    updateUser(userId,user.accessToken, dispatch, updatedUser)
-      .then(() => {
-        getAllUsers(user?.accessToken, dispatch);
-        alert("User updated successfully");
-        onClose();
-      })
-      .catch((error) => console.error("Error updating user: ", error));
+    try {
+      await updateUser(userId, currentUser?.accessToken, dispatch, updatedUser);
+      await getAllUsers(currentUser?.accessToken, dispatch);
+      alert("User updated successfully");
+      onClose();
+    } catch (error) {
+      console.error("Error updating user: ", error);
+      alert("Failed to update user. Please try again.");
+    }
   };
 
   if (!user) return null;

@@ -38,7 +38,7 @@ const UpdatePage = memo(() => {
     if (window.confirm("Bạn có muốn cập nhật?")) {
       try {
         await updateUser(id, user?.accessToken, dispatch, newUser);
-        
+
         alert("Cập nhật thành công");
         navigate('/client/profile')
       } catch (error) {
@@ -47,7 +47,6 @@ const UpdatePage = memo(() => {
     }
   };
   
-
   return (
     <>
       <div className="register-page position-relative">
