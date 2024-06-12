@@ -48,10 +48,10 @@ const UpdatePage = memo(() => {
   };
   
   return (
-    <>
+    <div>
       <div className="register-page position-relative">
         <form
-          className="col-5 d-flex gap-3 flex-column align-items-center justify-content-center p-5 shadow-lg rounded-end overflow-auto position-absolute"
+          className="register-page__form col-5 d-flex gap-3 flex-column align-items-center justify-content-center p-5 shadow-lg rounded-end overflow-auto position-absolute"
           onSubmit={handelUpdate}
         >
           <h2>Cập nhật thông tin</h2>
@@ -111,7 +111,7 @@ const UpdatePage = memo(() => {
         </form >
         <img src={registerGif} alt="register" className='gif-update position-absolute right-0'></img>
       </div >
-    </>
+    </div>
   );
 })
 

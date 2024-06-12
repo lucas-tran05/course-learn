@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import { ROUTER } from './router.js';
-import HomePage from '../pages/clients/HomePage/index.js';
-import ProfilePage from "../pages/clients/ProfilePage/index.js";
-import HomePageAdmin from '../pages/admin/HomePageAdmin/index.js';
-import LoginPage from "../pages/LoginPage/index.js";
-import RegisterPage from "../pages/RegisterPage/index.js";
-import ClassPage from "../pages/clients/ClassPage/index.js";
-import ExercisePage from "../pages/clients/ExercisePage/index.js";
-import UpdatePage from "../pages/clients/UpdatePage/index.js";
+import HomePage from '../pages/clients/HomePage/index';
+import ProfilePage from "../pages/clients/ProfilePage/index";
+import HomePageAdmin from '../pages/admin/HomePageAdmin/index';
+import LoginPage from "../pages/LoginPage/index";
+import RegisterPage from "../pages/RegisterPage/index";
+import ClassPage from "../pages/clients/ClassPage/index";
+import ExercisePage from "../pages/clients/ExercisePage/index";
+import UpdatePage from "../pages/clients/UpdatePage/index";
 
 
 const renderUserRouter = () => {

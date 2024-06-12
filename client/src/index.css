@@ -9,19 +9,45 @@ html{
   font-size: 1rem;
   color: var(--color-text-dark);
   box-sizing: border-box;
+}
 
+.dark-mode{
+  background-color: var(--background-color-dark) !important;
+}
+
+.dark-mode *:not(.btn-style-1, .btn-style-2, .header-style, .header-style *){
+  background-color: var(--background-color-dark) !important;
+  color: var(--color-text-light) !important;
+}
+
+.dark-mode .btn-style-1:hover{
+  background-color: var(--color-background-transparent);
+  border: 1px solid var(--color-text-light);
+  color: var(--color-text-light);
+}
+
+.dark-mode .btn-style-2{
+  background-color: var(--color-background-transparent);
+  border: 1px solid var(--color-text-light);
+  color: var(--color-text-light);
+}
+
+.dark-mode form, .dark-mode .card, .dark-mode{
+  background-color: var(--background-color-dark) !important;
+  color: var(--color-text-light) !important;
 }
 
 :root{
   --color-background-transparent: rgba(0, 0, 0, 0);
 
   /* color light mode */
+  --background-color-light: #fff;
   --color-light-primary: #18346A;
   --color-light-secondary: #7797B0;
   --color-light-1: #44628D;
   
   /* color dark mode */
-  --background-color-dark: #18346A;
+  --background-color-dark: #212529;
   --primary-color-dark: #7797B0;
   --secondary-color-dark: #44628D;
   

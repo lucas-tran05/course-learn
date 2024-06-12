@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { memo } from 'react';
-import { logo, loginIMG } from '../../components/imageRender';
+import { logo } from '../../components/imageRender';
 import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
 import { useDispatch } from 'react-redux';
