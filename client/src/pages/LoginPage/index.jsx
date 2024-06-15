@@ -24,9 +24,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-page container-fluid d-flex justify-content-center align-items-center position-relative">
+    <div className="login-page col-lg-3 col-9 col-sm-8 container-fluid d-flex justify-content-center align-items-center">
       <form
-        className="login-page__form col-3 d-flex gap-2 flex-column align-items-center justify-content-center"
+        className="login-page__form d-flex gap-2 flex-column align-items-center justify-content-center"
         onSubmit={handelLogin}
       >
         <img

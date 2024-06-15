@@ -62,7 +62,7 @@ const BubbleRegisterBox = memo(() => {
       </button>
       <form
         className={`position-relative shadow rounded-4 d-flex flex-column justify-content-center align-items-center overflow-auto p-5`}
-        style={{ background: "white", zIndex: '1000', width: '40rem', height:'95dvh' }}
+        style={{ background: "white", zIndex: '1000', width: '40rem', maxHeight:'95dvh' }}
         onSubmit={handelRegister}
       >
 

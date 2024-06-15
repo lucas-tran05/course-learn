@@ -82,7 +82,7 @@ const BubbleUpdateBox = memo(({ userId, onClose, userCurrent }) => {
       </button>
       <form
         className='position-relative shadow rounded-4 d-flex flex-column justify-content-center align-items-center overflow-auto p-4'
-        style={{ background: "white", zIndex: '1000', width: '40rem', height: '95vh' }}
+        style={{ background: "white", zIndex: '1000', width: '40rem', maxHeight: '95vh' }}
         onSubmit={handleUpdate}
       >
         <h2>Update User</h2>

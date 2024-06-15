@@ -18,13 +18,13 @@ const HomePage = memo(() => {
     <>
       <Header />
       <div className="home-page container-fluid d-flex justify-content-center fix-header">
-        <div className="p-5 shadow rounded-4 mb-4">
-          <h3 className="font-weight-bold">Danh khóa học</h3>
-          <div className="container-fluid row gy-5 align-items-center justify-content-around m-0">
+        <div className="child-page-style p-5 shadow rounded-4 mb-4">
+          <h3 className="font-weight-bold mb-4">Danh khóa học</h3>
+          <div className="container-fluid row gy-5 justify-content-around gap-1 ">
             {
               listCourse.map((course) => {
                 return (
-                  <div className="card col-3 p-4 round-3" style={{ width: '30%' }}>
+                  <div className="card col-10 col-lg-3 col-md-4 p-4 round-3">
                     <img alt='course' className="card-img-top rounded-3 border border-1" style={{ width: '100%', height: 'calc(50/100 * 30/100* 100vw)', objectFit: 'cover' }} src={course.img !== '' ?course.img: courseIMG}></img>
                     <div className="card-body">
                       <h5 className="card-title">{course.courseName}</h5>

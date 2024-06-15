@@ -32,6 +32,12 @@ const Header = memo(() => {
     }
   }, []);
 
+  const showMenu = () => {
+    const menuNav = document.getElementById("menu-nav");
+    menuNav.classList.toggle("menu-nav-visible");
+    menuNav.classList.toggle("menu-nav-hidden");
+  };
+
   return (
     <div className="container-fluid d-flex justify-content-around align-items-center fixed-top shadow-sm header-style">
       <div className="left d-flex align-items-center">
@@ -56,13 +62,13 @@ const Header = memo(() => {
           </p>
         </Link>
       </div>
-      <div className="middle d-flex">
+      <div id="lg-view" className="middle d-flex">
         <Link
           to="/client/home"
-          className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1" 
+          className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1"
           style={{ fontWeight: "bold" }}
         >
-          <span class="material-symbols-outlined">home</span>
+          <span className="material-symbols-outlined">home</span>
           Trang chủ
         </Link>
         <Link
@@ -70,7 +76,7 @@ const Header = memo(() => {
           className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1"
           style={{ fontWeight: "bold" }}
         >
-          <span class="material-symbols-outlined">class</span>
+          <span className="material-symbols-outlined">class</span>
           Lớp học
         </Link>
         <Link
@@ -78,7 +84,7 @@ const Header = memo(() => {
           className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1"
           style={{ fontWeight: "bold" }}
         >
-          <span class="material-symbols-outlined">exercise</span>
+          <span className="material-symbols-outlined">exercise</span>
           Bài tập
         </Link>
       </div>
@@ -128,6 +134,52 @@ const Header = memo(() => {
             <button className="dropdown-item" onClick={handelLogOut}>
               Đăng xuất
             </button>
+          </li>
+        </ul>
+      </div>
+      
+      <div className="responsive-header align-items-center justify-content-center d-flex">
+        <span className="material-symbols-outlined position-relative p-3" onClick={showMenu}>menu</span>
+        <ul
+          id="menu-nav"
+          className="menu-nav position-absolute p-3 col-md-5 col-12 d-flex flex-column gap-3 align-items-center justify-content-center menu-nav-hidden"
+          style={{
+            top: "var(--header-height)",
+            right: "0",
+            zIndex: "1000",
+            backdropFilter: "blur(50px)",
+          }}
+        >
+          <li>
+            <Link to="/client/profile">
+              <span className="material-symbols-outlined">person</span>
+              Thông tin
+            </Link>
+          </li>
+          <li>
+            <Link to="/client/home">
+              <span className="material-symbols-outlined">home</span>Trang chủ
+            </Link>
+          </li>
+          <li>
+            <Link to="/client/class">
+              <span className="material-symbols-outlined">class</span>Lớp học
+            </Link>
+          </li>
+          <li>
+            <Link to="/client/exercise">
+              <span className="material-symbols-outlined">exercise</span>Bài tập
+            </Link>
+          </li>
+          <li>
+            <Link to="/client/setting">
+              <span className="material-symbols-outlined">settings</span>Cài dặt
+            </Link>
+          </li>
+          <li>
+            <Link onClick={handelLogOut}>
+              <span className="material-symbols-outlined">logout</span>Đăng xuất
+            </Link>
           </li>
         </ul>
       </div>

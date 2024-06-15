@@ -79,11 +79,11 @@ const HomePageAdmin = memo(() => {
         className="row g-0 w-100 justify-content-center home-admin"
         style={{ minHeight: "100dvh" }}
       >
-        <div className="col-11 m-3 shadow rounded-4 p-5 position-relative">
+        <div className="child-page-style col-11 m-3 shadow rounded-4 p-5 position-relative">
           <span id="darkMode" class="material-symbols-outlined position-absolute top-0 end-0 p-3" onClick={changeBackground} style={{cursor: 'pointer'}}>dark_mode</span>
           <div className="table-responsive d-flex align-items-center flex-column">
-            <table className="table table-striped table-hover rounded-4 align-middle text-center">
-              <thead>
+            <table className="table table-striped table-hover rounded-4 align-middle text-center" >
+              <thead >
                 <tr>
                   <th scope="col-1">Order</th>
                   <th scope="col-2">Student ID</th>

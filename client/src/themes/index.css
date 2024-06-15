@@ -9,6 +9,14 @@ html{
   font-size: 1rem;
   color: var(--color-text-dark);
   box-sizing: border-box;
+  background: url(../assets/images/loginIMG.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body{
+  background-color: transparent;
 }
 
 :root{
@@ -102,4 +110,9 @@ p{
 
 .btn-style-close:hover{
   opacity: 0.8;
+}
+
+
+.child-page-style{
+  backdrop-filter: blur(10px);
 }

@@ -4,17 +4,12 @@
 
 .login-page__form{
   z-index: 1000;
-  width: 400px;
+  width: 100%;
+  min-height: 60dvh;
   border: 2px solid rgba(255,255,255,.2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   border-radius: 10px;
   padding: 40px;
   color: white;
-}
-
-.login-page{
-  background: url(../../assets/images/loginIMG.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
 }

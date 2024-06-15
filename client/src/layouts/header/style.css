@@ -1,6 +1,7 @@
 .header-style{
   height: var(--header-height);
   background-color: var(--color-light-primary);
+  opacity: 0.9;
   z-index: 1000;
 }
 .dropdown-toggle::after {
@@ -18,6 +19,38 @@
   transition: 0.3s;
 }
 
-.header-style  a:hover{
+.header-style  a:hover, span:hover{
   opacity: 0.8;
 } 
+
+.responsive-header{
+  cursor: pointer;
+  color: var(--color-text-light);
+  display: none !important;
+}
+
+.responsive-header ul{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: none ;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.responsive-header ul li a{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: black;
+
+}
+
+.menu-nav-hidden {
+  display: none !important;
+}
+
+.menu-nav-visible {
+  display: flex !important;
+}
