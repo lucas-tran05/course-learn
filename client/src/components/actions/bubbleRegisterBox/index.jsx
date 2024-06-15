@@ -62,47 +62,47 @@ const BubbleRegisterBox = memo(() => {
       </button>
       <form
         className={`position-relative shadow rounded-4 d-flex flex-column justify-content-center align-items-center overflow-auto p-5`}
-        style={{ background: "white", zIndex: '1000', width: '40%', height: '95vh' }}
+        style={{ background: "white", zIndex: '1000', width: '40rem', height:'95dvh' }}
         onSubmit={handelRegister}
       >
 
         <h2>Create account</h2>
         <div className="w-100">
           <div className="row">
-            <div className="mb-2">
+            <div className="mb-1">
               <label htmlFor="inputName" className="form-label">Name</label>
               <input type="text" className="form-control" id="inputName" onChange={(e) => setName(e.target.value)} />
             </div>
-            <div className="mb-2 col-6">
+            <div className="mb-1 col-6">
               <label htmlFor="inputUsername" className="col-form-label">Username</label>
               <input type="text" className="form-control" id="inputUsername" onChange={(e) => setUsername(e.target.value)} />
             </div>
-            <div className="mb-2 col-6">
+            <div className="mb-1 col-6">
               <label htmlFor="inputPassword" className="col-form-label">Password</label>
               <input type="password" className="form-control" id="inputPassword" onChange={(e) => setPassword(e.target.value)} />
             </div>
           </div>
           <div className="row">
-            <div className="mb-2 col">
+            <div className="mb-1 col">
               <label htmlFor="inputID" className="form-label">Student ID</label>
               <input type="text" className="form-control" id="inputID" onChange={(e) => setStuID(e.target.value)} />
             </div>
-            <div className="mb-2 col">
+            <div className="mb-1 col">
               <label htmlFor="inputMajor" className="form-label">Major</label>
               <input type="text" className="form-control" id="inputMajor" onChange={(e) => setMajor(e.target.value)} />
             </div>
           </div>
           <div className="row">
-            <div className="mb-2 col">
+            <div className="mb-1 col">
               <label htmlFor="inputPhone" className="form-label">Phone number</label>
               <input type="text" className="form-control" id="inputPhone" onChange={(e) => setPhone(e.target.value)} />
             </div>
-            <div className="mb-2 col">
+            <div className="mb-1 col">
               <label htmlFor="inputEmail1" className="form-label">Email address</label>
               <input type="email" className="form-control" id="inputEmail1" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
             </div>
           </div>
-          <div className="mb-2">
+          <div className="mb-1">
             <label htmlFor="inputAddress" className="form-label">Address</label>
             <input type="text" className="form-control" id="inputAddress" onChange={(e) => setAddress(e.target.value)} />
           </div>
@@ -120,7 +120,7 @@ const BubbleRegisterBox = memo(() => {
             <input type="date" id="birth" className='col form-control' onChange={(e) => setBirth(e.target.value)} />
           </div>
         </div>
-        <button type="submit" className="btn mt-5 btn-primary w-75">Create</button>
+        <button type="submit" className="btn mt-4 btn-primary w-75">Create</button>
       </form>
     </div>
   );

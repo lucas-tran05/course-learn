@@ -7,6 +7,8 @@
   height: calc(100dvh - var(--header-height));
   top: var(--header-height);
   z-index: 100;
+  width: 30rem;
+  
 }
 
 .profile-page .profile-page__right{

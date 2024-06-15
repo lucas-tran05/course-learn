@@ -14,21 +14,21 @@ const Header = memo(() => {
 
   const handelLogOut = () => {
     logOutUser(dispatch, id, navigate, accessToken);
-  }
+  };
 
   const changeBackground = () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-      localStorage.setItem('dark-mode', 'enabled');
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("dark-mode", "enabled");
     } else {
-      localStorage.setItem('dark-mode', 'disabled');
+      localStorage.setItem("dark-mode", "disabled");
     }
-  }
+  };
 
   useEffect(() => {
-    const darkMode = localStorage.getItem('dark-mode');
-    if (darkMode === 'enabled') {
-      document.body.classList.add('dark-mode');
+    const darkMode = localStorage.getItem("dark-mode");
+    if (darkMode === "enabled") {
+      document.body.classList.add("dark-mode");
     }
   }, []);
 
@@ -45,19 +45,52 @@ const Header = memo(() => {
           />
         </Link>
         <Link to="/client/home" className="p-0">
-          <p style={{ fontSize: "var(--size-text-medium)", color: "var(--color-text-light)", fontWeight: "bold" }}>
+          <p
+            style={{
+              fontSize: "var(--size-text-medium)",
+              color: "var(--color-text-light)",
+              fontWeight: "bold",
+            }}
+          >
             COURSE LEARN
           </p>
         </Link>
       </div>
-      <div className="middle">
-        <Link to="/client/home" className="pl-10 pr-10" style={{ fontWeight: "bold" }}>Trang chủ</Link>
-        <Link to="/client/class" className="pl-10 pr-10" style={{ fontWeight: "bold" }}>Lớp học</Link>
-        <Link to="/client/exercise" className="pl-10 pr-10" style={{ fontWeight: "bold" }}>Bài tập</Link>
+      <div className="middle d-flex">
+        <Link
+          to="/client/home"
+          className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1" 
+          style={{ fontWeight: "bold" }}
+        >
+          <span class="material-symbols-outlined">home</span>
+          Trang chủ
+        </Link>
+        <Link
+          to="/client/class"
+          className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1"
+          style={{ fontWeight: "bold" }}
+        >
+          <span class="material-symbols-outlined">class</span>
+          Lớp học
+        </Link>
+        <Link
+          to="/client/exercise"
+          className="pl-10 pr-10 align-items-center justify-content-center d-flex gap-1"
+          style={{ fontWeight: "bold" }}
+        >
+          <span class="material-symbols-outlined">exercise</span>
+          Bài tập
+        </Link>
       </div>
       <div className="right d-flex align-items-center">
         <Link to="/client/profile" className="p-0">
-          <p style={{ fontSize: "var(--size-text-medium)", fontWeight: "bold", color: "var(--color-text-light)" }}>
+          <p
+            style={{
+              fontSize: "var(--size-text-medium)",
+              fontWeight: "bold",
+              color: "var(--color-text-light)",
+            }}
+          >
             {user?.name}
           </p>
         </Link>
@@ -70,16 +103,32 @@ const Header = memo(() => {
           <img
             className="client-img rounded-circle shadow-sm"
             src={user?.avatar ? user?.avatar : clientIMG}
-            alt="logo"
+            alt="avatar"
             draggable="false"
-            style={{ width: 'calc(65 * var(--header-height) / 100)' }}
+            style={{ width: "calc(65 * var(--header-height) / 100)" }}
           />
         </button>
         <ul className="dropdown-menu shadow-sm border-1">
-          <li><Link className="dropdown-item" to='/client/profile'>Thông tin</Link></li>
-          <li><button className="dropdown-item" onClick={changeBackground}>Switch mode</button></li>
-          <li><Link className="dropdown-item" to='/client/setting'>Cài đặt</Link></li>
-          <li><button className="dropdown-item" onClick={handelLogOut}>Đăng xuất</button></li>
+          <li>
+            <Link className="dropdown-item" to="/client/profile">
+              Thông tin
+            </Link>
+          </li>
+          <li>
+            <button className="dropdown-item" onClick={changeBackground}>
+              Switch mode
+            </button>
+          </li>
+          <li>
+            <Link className="dropdown-item" to="/client/setting">
+              Cài đặt
+            </Link>
+          </li>
+          <li>
+            <button className="dropdown-item" onClick={handelLogOut}>
+              Đăng xuất
+            </button>
+          </li>
         </ul>
       </div>
     </div>

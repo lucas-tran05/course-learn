@@ -1,6 +1,22 @@
-.gif-update{
-  width: 50%;
-  top: 50%;
-  transform: translateY(40%);
-  right: 0;
+.update-page{
+  height: 100dvh;
+  background: url(../../../assets/images/loginIMG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.update-page > form{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 40rem;
+  border-right: 2px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  padding: 40px;
+  color: white;
 }

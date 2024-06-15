@@ -81,8 +81,8 @@ const BubbleUpdateBox = memo(({ userId, onClose, userCurrent }) => {
         </span>
       </button>
       <form
-        className='position-relative shadow rounded-4 d-flex flex-column justify-content-center align-items-center overflow-auto p-5'
-        style={{ background: "white", zIndex: '1000', width: '40%', height: '95vh' }}
+        className='position-relative shadow rounded-4 d-flex flex-column justify-content-center align-items-center overflow-auto p-4'
+        style={{ background: "white", zIndex: '1000', width: '40rem', height: '95vh' }}
         onSubmit={handleUpdate}
       >
         <h2>Update User</h2>
@@ -135,7 +135,7 @@ const BubbleUpdateBox = memo(({ userId, onClose, userCurrent }) => {
             <input type="date" id="birth" className='col form-control' value={birth} onChange={(e) => setBirth(e.target.value)} />
           </div>
         </div>
-        <button type="submit" className="btn mt-5 btn-success w-75">Update</button>
+        <button type="submit" className="btn mt-4 btn-success w-75">Update</button>
       </form>
     </div>
   );

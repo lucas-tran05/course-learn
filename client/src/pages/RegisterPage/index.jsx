@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import {logo, registerGif} from '../../components/imageRender'
+import {logo, loginIMG} from '../../components/imageRender'
 import { useState } from 'react'
 import { registerUser } from '../../api/apiRequest'
 import './style.css'
@@ -35,14 +35,13 @@ const RegisterPage = () => {
     <>
       <div className="register-page position-relative">
         <Link to="/login">
-          <button className='btn btn-style-1 position-absolute left-0 mt-5 rounded-end-4 rounded-start-0 p-2 shadow-sm' style={{ minWidth: '150px'}}> Đăng nhập</button>
+          <button className='btn btn-style-1 position-absolute left-0 mt-5 rounded-end-4 rounded-start-0 p-2 shadow-sm' style={{ minWidth: '150px', zIndex: '100'}}> Đăng nhập</button>
         </Link>
-        <img src={registerGif} alt="register" className='gif-register position-absolute right-0'></img>
         <form 
-        className="col-5 offset-7 d-flex gap-3 flex-column align-items-center justify-content-center p-5 shadow-lg rounded-start overflow-auto"
+        className="col-5 offset-7 d-flex gap-2 flex-column align-items-center justify-content-center p-4 shadow-lg rounded-start overflow-auto"
         onSubmit={handelRegister}
         >
-          <img src={logo} alt="logo" className='bg-transparent mb-3 border-none rounded-2' draggable="false" style={{ width: '50px'}} />
+          <img src={logo} alt="logo" className='bg-transparent mb-2 border-none rounded-2' draggable="false" style={{ width: '50px'}} />
           <h2>Đăng kí tài khoản</h2>
           <div className="form__create-client w-75 gap-3 d-flex flex-column">
             <div>

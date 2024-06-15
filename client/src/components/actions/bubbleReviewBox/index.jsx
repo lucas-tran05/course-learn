@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
-import { clientIMG } from "../../../components/imageRender";
+import { clientIMG } from "../../imageRender";
 
 const BubbleReviewBox = memo(({ userId, onClose }) => {
   const allUsers = useSelector((state) => state.user.users?.allUsers);
@@ -27,7 +27,7 @@ const BubbleReviewBox = memo(({ userId, onClose }) => {
         </span>
       </button>
       <div className='rounded-4 profile-page__left col-4 overflow-auto text-center p-5 shadow p-0 m-0 w-content' style={{ zIndex: '1000', backgroundColor: 'white' }}>
-        <img src={user?.avatar ? user?.avatar : clientIMG} alt="avatar" className='rounded-circle shadow' draggable="false" style={{ width: "120px" }} />
+        <img src={user?.avatar ? user?.avatar : clientIMG} alt="avatar" className='rounded-circle shadow' draggable="false" style={{ width: "120px", height: "120px" }} />
         <h2 className='mt-4 mb-4'> {user?.name ? user?.name : "NULL"} </h2>
         <ul className='d-flex flex-column gap-3 mt-3 flex-wrap p-0'>
           <ul className='d-flex gap-2'>

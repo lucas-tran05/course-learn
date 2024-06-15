@@ -15,7 +15,6 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const accessToken = user?.accessToken;
   const id = user?._id;
-  // let axiosJWT = axiosInstance(user,dispatch,loginSuccess);
   const handelLogOut = () => {
     logOutUser(dispatch, id, navigate, accessToken);
   }
@@ -23,11 +22,11 @@ const ProfilePage = () => {
     <div>
       <Header />
       <div className="profile-page row g-0 container-fluid position-relative w-100">
-        <div className='profile-page__left col-4 overflow-auto text-center fixed-left left-0 p-5 shadow rounded-end p-0 m-0'>
-          <img src={user?.avatar ? user?.avatar : clientIMG} alt="avatar" className='rounded-circle shadow' draggable="false" style={{ width: "120px" }} />
+        <div className='profile-page__left col-4 overflow-auto fixed-left p-4 shadow rounded-end align-items-center d-flex flex-column'>
+          <img src={user?.avatar ? user?.avatar : clientIMG} alt='avatar' className='rounded-circle shadow text-center' draggable="false" style={{ width: "120px", height: "120px" }} />
           <h2 className='mt-4 mb-4'> {user?.name?user?.name:"NULL"} </h2>
           <Link to="/client/update"><button className='btn btn-style-1 mb-4'> Cập nhật thông tin </button></Link>
-          <ul className='d-flex flex-column gap-3 mt-3 flex-wrap p-0'>
+          <ul className='d-flex flex-column gap-3 mt-2 flex-wrap p-0 w-100'>
             <ul className='d-flex gap-2'>
               <span className="material-symbols-outlined">
                 person

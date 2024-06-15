@@ -1,10 +1,5 @@
 const mongodb = require('mongoose');
 
-const isValidDate = (dateString) => {
-  const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(\d{4})$/;
-  return regex.test(dateString);
-};
-
 const UserSchema = new mongodb.Schema({
   name: {
     type: String,
@@ -54,9 +49,6 @@ const UserSchema = new mongodb.Schema({
   birth: {
     type: Date,
     required: false,
-    validate: {
-      validator: isValidDate,
-    }
   },
   major: {
     type: String,
