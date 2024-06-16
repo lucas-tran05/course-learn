@@ -35,10 +35,10 @@ const RegisterPage = () => {
     <>
       <div className="register-page position-relative">
         <Link to="/login">
-          <button className='btn btn-style-1 position-absolute left-0 mt-5 rounded-end-4 rounded-start-0 p-2 shadow-sm' style={{ minWidth: '150px', zIndex: '100'}}> Đăng nhập</button>
+          <button className='btn btn-style-1 position-absolute left-0 mt-5 rounded-end-4 rounded-start-0 p-2 shadow-sm' style={{ minWidth: '150px', zIndex: '10000'}}> Đăng nhập</button>
         </Link>
         <form 
-        className="col-5 offset-7 d-flex gap-2 flex-column align-items-center justify-content-center p-4 shadow-lg rounded-start overflow-auto"
+        className="col-lg-5 offset-lg-7 col-sm-8 offset-sm-4 col-12 d-flex gap-2 flex-column align-items-center justify-content-center p-4 shadow-lg rounded-start overflow-auto"
         onSubmit={handelRegister}
         >
           <img src={logo} alt="logo" className='bg-transparent mb-2 border-none rounded-2' draggable="false" style={{ width: '50px'}} />

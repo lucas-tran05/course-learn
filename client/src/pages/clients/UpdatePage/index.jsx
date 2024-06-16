@@ -50,7 +50,7 @@ const UpdatePage = memo(() => {
     <div>
       <div className="update-page position-relative ">
         <form
-          className="update-page__form col-lg-5 col d-flex gap-3 flex-column align-items-center justify-content-center position-absolute"
+          className="update-page__form col-lg-5 col-sm-8 col-12 d-flex gap-3 flex-column align-items-center justify-content-center position-absolute "
           onSubmit={handelUpdate}
         >
           <h2>Cập nhật thông tin</h2>

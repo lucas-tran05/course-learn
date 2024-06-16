@@ -142,7 +142,7 @@ const Header = memo(() => {
         <span className="material-symbols-outlined position-relative p-3" onClick={showMenu}>menu</span>
         <ul
           id="menu-nav"
-          className="menu-nav position-absolute p-3 col-md-5 col-12 d-flex flex-column gap-3 align-items-center justify-content-center menu-nav-hidden"
+          className="menu-nav position-absolute p-3 col-md-3 col-12 d-flex flex-column gap-3 align-items-center justify-content-center menu-nav-hidden"
           style={{
             top: "var(--header-height)",
             right: "0",

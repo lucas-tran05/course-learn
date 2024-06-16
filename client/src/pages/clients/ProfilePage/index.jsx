@@ -22,7 +22,7 @@ const ProfilePage = () => {
     <div>
       <Header />
       <div className="profile-page row g-0 container-fluid position-relative w-100">
-        <div className='profile-page__left col-4 overflow-auto fixed-left p-4 shadow rounded-end align-items-center d-flex flex-column'>
+        <div className='profile-page__left col-lg-4 col-md-6 col-12 overflow-auto fixed-left p-4 shadow rounded-end align-items-center d-flex flex-column'>
           <img src={user?.avatar ? user?.avatar : clientIMG} alt='avatar' className='rounded-circle shadow text-center' draggable="false" style={{ width: "120px", height: "120px" }} />
           <h2 className='mt-4 mb-4'> {user?.name?user?.name:"NULL"} </h2>
           <Link to="/client/update"><button className='btn btn-style-1 mb-4'> Cập nhật thông tin </button></Link>
@@ -78,7 +78,7 @@ const ProfilePage = () => {
             </ul>
           </ul>
         </div>
-        <div className='profile-page__right  col justify-content-between d-flex p-4 d-flex flex-column align-items-center'>
+        <div className='profile-page__right col-lg-8 col-md-6 col-12 justify-content-between d-flex p-4 d-flex flex-column align-items-center'>
           <div>
             <ul className='d-flex gap-3 mt-3 flex-wrap'>
               <li>NULL</li>

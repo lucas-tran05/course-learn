@@ -81,16 +81,16 @@ const HomePageAdmin = memo(() => {
       >
         <div className="child-page-style col-11 m-3 shadow rounded-4 p-5 position-relative">
           <span id="darkMode" class="material-symbols-outlined position-absolute top-0 end-0 p-3" onClick={changeBackground} style={{cursor: 'pointer'}}>dark_mode</span>
-          <div className="table-responsive d-flex align-items-center flex-column">
+          <div className="table-responsive-lg d-flex align-items-center flex-column">
             <table className="table table-striped table-hover rounded-4 align-middle text-center" >
               <thead >
                 <tr>
                   <th scope="col-1">Order</th>
-                  <th scope="col-2">Student ID</th>
-                  <th scope="col-2">Username</th>
-                  <th scope="col-3">Name</th>
-                  <th scope="col-3">Email</th>
-                  <th scope="col-1">Role</th>
+                  <th scope="col-xl-2">Student ID</th>
+                  <th scope="col-xl-2">Username</th>
+                  <th scope="col-xl-3">Name</th>
+                  <th scope="col-xl-3">Email</th>
+                  <th scope="col-xl-1">Role</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
